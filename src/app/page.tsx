@@ -1,5 +1,6 @@
 "use client";
 
+import Introduction from "@/components/Introduction";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -44,21 +45,10 @@ export default function Home() {
 
   return (
     <div>
-      <header>
-        asdasd
-      </header>
-      <div className="border border-white flex justify-end items-center bg-gray-900 px-4 overflow-hidden pb-4 h-[300px] sm:h-[400px] lg:h-[600px]">
-        {/* <div className="border border-white text-white h-full">
-          div 1
-        </div>
+      <div className="flex justify-between items-center px-4 overflow-hidden pb-4 h-[600px] sm:h-[400px] lg:h-[600px]">
+        <Introduction />
 
-        <div className="flex mr-4 lg:mr-44 border-white border">
-          <div className="text-gray-50 text-3xl sm:text-5xl lg:text-[76px] mr-4 sm:mr-8 shrink-0">
-            I'm a
-          </div>
-        </div> */}
         <div className="flex items-center w-[10px] h-[10px] relative">
-          {/* gpt my question is above's h-creen */}
           {/* Circle container */}
           <div className="absolute right-[-100px] w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] flex items-center justify-center overflow-visible">
             {skills.map((skill, index) => {
@@ -94,6 +84,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* This is the 2nd section but div */}
       <div className="flex min-h-screen bg-gradient-to-b from-gray-900 from-10% to-[#102A43] to-90%">
         <div className="w-[20%] border border-white">
           leftasd
