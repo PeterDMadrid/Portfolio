@@ -1,7 +1,9 @@
 "use client";
 
-import Introduction from "@/components/Introduction";
+import Introduction from "@/app/homeComponents/Introduction";
 import { useState, useEffect } from "react";
+import { useParallax } from "@/hooks/useparallax";
+import Skills from "./homeComponents/SkillsDisplay";
 
 export default function Home() {
   const skills = [
@@ -43,49 +45,16 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const parallaxRef = useParallax(0.2);
+
   return (
     <div>
-      <div className="flex justify-between items-center px-4 overflow-hidden pb-4 h-[600px] sm:h-[400px] lg:h-[600px]">
+      <div ref={parallaxRef} className="flex justify-between items-center px-4 overflow-hidden pb-4 h-[600px] sm:h-[400px] lg:h-[600px] relative z-0">
         <Introduction />
-
-        <div className="flex items-center w-[10px] h-[10px] relative">
-          {/* Circle container */}
-          <div className="absolute right-[-100px] w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] flex items-center justify-center overflow-visible">
-            {skills.map((skill, index) => {
-              let offset = Math.abs(index - currentIndex);
-              if (offset > skills.length / 2) offset = skills.length - offset;
-
-              const angle =
-                ((index - currentIndex) * (360 / skills.length) + 180) *
-                (Math.PI / 180);
-
-              const x = Math.cos(angle) * radius;
-              const y = Math.sin(angle) * radius;
-              const isActive = index === currentIndex;
-
-              const opacity = isActive ? 1 : 1 - offset * 0.4;
-
-              return (
-                <div
-                  key={index}
-                  className={`absolute transition-all duration-700 ${isActive
-                    ? "text-3xl sm:text-5xl lg:text-[76px] text-amber-400"
-                    : "text-gray-400 text-sm sm:text-base lg:text-lg"
-                    }`}
-                  style={{
-                    transform: `translate(${x}px, ${y}px)`,
-                    opacity,
-                  }}
-                >
-                  {skill}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <Skills />
       </div>
       {/* This is the 2nd section but div */}
-      <div className="flex min-h-screen bg-gradient-to-b from-gray-900 from-10% to-[#102A43] to-90%">
+      <div className="flex min-h-screen bg-gradient-to-b from-gray-900 from-10% to-[#102A43] to-90% relative z-100">
         <div className="w-[20%] border border-white">
           leftasd
         </div>
