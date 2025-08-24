@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Header() {
@@ -17,6 +18,7 @@ export default function Header() {
         <header>
             <nav
                 className={`
+      flex justify-between
       fixed top-0 w-full px-8
       z-[1000] transition-all duration-100 ease-in-out
       ${scrolled
@@ -24,7 +26,11 @@ export default function Header() {
                         : "bg-gray-900 backdrop-blur-[50px] py-2 border-b border-[#6366f1]/10"}
     `}
             >
-                <div className="text-white font-bold text-lg">PM</div>
+                <Link href="/" className="text-white font-bold text-lg cursor-pointer">PM</Link>
+                <div className="flex gap-4">
+                    <Link href="/" className="text-white font-bold text-lg cursor-pointer">About</Link>
+                    <Link href="/" className="text-white font-bold text-lg cursor-pointer">Projects</Link>
+                </div>
             </nav>
         </header>
     )
