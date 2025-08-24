@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function Skills() {
-
     const skills = [
         "Leader",
         "Innovator",
@@ -16,6 +15,7 @@ export default function Skills() {
 
     const [currentIndex, setIndex] = useState(0);
     const [radius, setRadius] = useState(150);
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     // Cycle through skills
     useEffect(() => {
@@ -25,15 +25,18 @@ export default function Skills() {
         return () => clearInterval(interval);
     }, [skills.length]);
 
-    // Resize radius only (not font size anymore)
+    // Resize radius and track screen size
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth < 640) {
-                setRadius(80);
-            } else if (window.innerWidth < 1024) {
-                setRadius(100);
+            const windowWidth = window.innerWidth;
+            setIsSmallScreen(windowWidth < 640);
+            
+            if (windowWidth < 640) {
+                setRadius(120);
+            } else if (windowWidth < 1024) {
+                setRadius(120);
             } else {
-                setRadius(250);
+                setRadius(280);
             }
         };
         handleResize();
@@ -42,15 +45,17 @@ export default function Skills() {
     }, []);
 
     return (
-        <div className="flex items-center w-[10px] h-[10px] relative">
+        <div className="flex items-center w-[180px] h-[100px] relative">
             {/* Circle container */}
-            <div className="absolute right-[-100px] w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] flex items-center justify-center overflow-visible">
+            <div className="absolute left-1/2 -translate-x-1/2 sm:right-[-100px] sm:left-auto sm:translate-x-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] flex items-center justify-center overflow-visible">
                 {skills.map((skill, index) => {
                     let offset = Math.abs(index - currentIndex);
                     if (offset > skills.length / 2) offset = skills.length - offset;
 
+                    const baseAngle = isSmallScreen ? 270 : 180;
+                    
                     const angle =
-                        ((index - currentIndex) * (360 / skills.length) + 180) *
+                        ((index - currentIndex) * (360 / skills.length) + baseAngle) *
                         (Math.PI / 180);
 
                     const x = Math.cos(angle) * radius;
@@ -77,5 +82,5 @@ export default function Skills() {
                 })}
             </div>
         </div>
-    )
+    );
 }
