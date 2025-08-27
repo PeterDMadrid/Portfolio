@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { X, Menu } from "lucide-react";
+import { X, Menu, House, UserRound, FolderKanban } from "lucide-react";
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
@@ -18,7 +18,7 @@ export default function Header() {
 
     return (
         <header>
-            <div className={`flex justify-between fixed top-0 w-full px-8 z-[1000] transition-all duration-100 ease-in-out
+            <div className={`flex justify-between fixed top-0 w-full px-8 z-[1000] transition-all duration-200 ease-in
       ${scrolled ? "bg-transparent backdrop-blur-0 shadow-none py-2" : "bg-gray-900 backdrop-blur-[50px] py-2 border-b border-[#6366f1]/10"}`}>
                 <Link href="/" className="text-white font-bold text-lg cursor-pointer">PM</Link>
                 <nav className="hidden md:block ">
@@ -41,28 +41,28 @@ export default function Header() {
                     />
 
                     {/* Menu Content */}
-                    <div className="relative bg-gray-900/95 backdrop-blur-md border-b border-[#6366f1]/10 px-8 pb-6 pt-20 w-[50%] text-end">
+                    <div className="relative bg-gray-900/95 backdrop-blur-md border-b border-[#6366f1]/10 px-8 pb-6 pt-20 w-[50%]">
                         <nav className="flex flex-col space-y-6">
                             <Link
                                 href="/"
-                                className="text-slate-400 font-light text-lg cursor-pointer transition-colors hover:text-white"
+                                className="flex gap-2 justify-end text-slate-400 font-light text-lg cursor-pointer transition-colors hover:text-white"
                                 onClick={() => setMenu(false)}
                             >
-                                Home
+                                Home <House />
                             </Link>
                             <Link
                                 href="/about"
-                                className="text-slate-400 font-light text-lg cursor-pointer transition-colors hover:text-white"
+                                className="flex gap-2 justify-end text-slate-400 font-light text-lg cursor-pointer transition-colors hover:text-white"
                                 onClick={() => setMenu(false)}
                             >
-                                About
+                                About <UserRound />
                             </Link>
                             <Link
                                 href="/projects"
-                                className="text-slate-400 font-light text-lg cursor-pointer transition-colors hover:text-white"
+                                className="flex gap-2 justify-end text-slate-400 font-light text-lg cursor-pointer transition-colors hover:text-white"
                                 onClick={() => setMenu(false)}
                             >
-                                Projects
+                                Projects <FolderKanban />
                             </Link>
                         </nav>
                     </div>
