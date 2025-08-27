@@ -27,9 +27,9 @@ export default function Header() {
     `}
             >
                 <Link href="/" className="text-white font-bold text-lg cursor-pointer">PM</Link>
-                <div className="flex gap-4">
-                    <Link href="/" className="text-white font-bold text-lg cursor-pointer">About</Link>
-                    <Link href="/" className="text-white font-bold text-lg cursor-pointer">Projects</Link>
+                <div className="flex gap-4 text-slate-400">
+                    <Link href="/about" className="font-light text-md cursor-pointer">About</Link>
+                    <Link href="/" className="font-light text-md cursor-pointer">Projects</Link>
                 </div>
             </nav>
         </header>
