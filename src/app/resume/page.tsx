@@ -1,5 +1,6 @@
 import Button from '@/components/Button';
 import Image from 'next/image';
+import { Linkedin, Github } from 'lucide-react';
 
 export default function Resume() {
     return (
@@ -25,16 +26,16 @@ export default function Resume() {
                     <p className="mb-6 text-gray-200">I'd love to hear your feedback!</p>
                     <div className="space-y-3">
                         <p className="flex items-center gap-2 text-sm sm:text-base break-all">
-                            <span className="flex-shrink-0"></span>
-                            <span>Email: petermadrid0421@gmail.com</span>
+                            <span className="flex-shrink-0">Email: </span>
+                            <span>petermadrid0421@gmail.com</span>
                         </p>
                         <p className="flex items-center gap-2 text-sm sm:text-base break-all">
-                            <span className="flex-shrink-0"></span>
-                            <span>LinkedIn: https://www.linkedin.com/in/peter-madrid-99752223b/</span>
+                            <span className="flex-shrink-0">LinkedIn:</span>
+                            <a href='/'><Linkedin /></a>
                         </p>
                         <p className="flex items-center gap-2 text-sm sm:text-base">
-                            <span className="flex-shrink-0"></span>
-                            <span>Github: https://github.com/PeterDMadrid</span>
+                            <span className="flex-shrink-0">Github: </span>
+                            <a href='/'><Github /></a>
                         </p>
                     </div>
                 </div>
@@ -47,7 +48,7 @@ export default function Resume() {
                         style={{ animation: "slideInUp 0.6s ease-out 0.6s both" }}
                         className="w-full sm:w-auto px-6 py-3 text-base sm:text-lg font-medium"
                     >
-                        📥 Download Resume
+                        Download Resume
                     </Button>
                 </div>
             </div>
