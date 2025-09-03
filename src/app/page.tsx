@@ -3,14 +3,16 @@
 import Introduction from "@/app/homeComponents/Introduction";
 import { useParallax } from "@/hooks/useparallax";
 import Skills from "./homeComponents/SkillsDisplay";
+import { useState, useRef, useCallback, useEffect, SetStateAction } from 'react';
+import LightEffect from "./homeComponents/LightEffect";
 
 export default function Home() {
-
+  
   const parallaxRef = useParallax(0.6);
 
   return (
     <div className="relative">
-      <div className="opacity-100 absolute -top-[10px] left-0 w-full h-full [clip-path:polygon(0_0,100%_10%,100%_100%,40%_100%)] sm:[clip-path:polygon(0_0,100%_33%,100%_100%,10%_100%)] bg-gradient-to-b from-yellow-300/40 from-0% via-yellow-400/20 via-10% to-[#0c2032] to-70%"></div>
+      <LightEffect />
       <section ref={parallaxRef} className="flex flex-wrap justify-center sm:justify-between items-center px-4 overflow-hidden pb-4 h-[900px] sm:h-[400px] md:h-[600px] lg:h-[600px] 2xl:h-[900px] relative z-0">
         <Introduction />
         <Skills />
