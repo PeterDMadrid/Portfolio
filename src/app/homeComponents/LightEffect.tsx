@@ -2,8 +2,12 @@
 
 import { useState, useRef, useCallback, useEffect, SetStateAction } from 'react';
 
-export default function LightEffect() {
-  const [isLightOn, setIsLightOn] = useState(false);
+interface LightEffectProps {
+  isLightOn: boolean;
+  setIsLightOn: (value: boolean | ((prev: boolean) => boolean)) => void;
+}
+
+export default function LightEffect({ isLightOn, setIsLightOn}: LightEffectProps) {
   const [chainPosition, setChainPosition] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startY, setStartY] = useState(0);
