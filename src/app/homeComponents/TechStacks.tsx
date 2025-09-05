@@ -56,7 +56,7 @@ export default function TechStack() {
                             {tech.mainLogo}
 
                             {tech.additionalLogos.map((item, index) => (
-                                <div key={index} className={`text-white absolute flex ${item.position} w-15 h-15 p-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-x-8 md:translate-x-0 md:group-hover:translate-x-8 transition-all duration-300`}>
+                                <div key={index} className={`text-white absolute flex ${item.position} w-15 h-15 p-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-x-8 md:translate-x-0 md:group-hover:translate-x-8 transition-all duration-200`}>
                                     {item.logo}
                                 </div>
                             ))}
