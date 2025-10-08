@@ -54,14 +54,7 @@ export default function Header() {
                                 className="flex gap-2 justify-end text-slate-400 font-light text-lg cursor-pointer transition-colors hover:text-white"
                                 onClick={() => setMenu(false)}
                             >
-                                About <UserRound />
-                            </Link>
-                            <Link
-                                href="/projects"
-                                className="flex gap-2 justify-end text-slate-400 font-light text-lg cursor-pointer transition-colors hover:text-white"
-                                onClick={() => setMenu(false)}
-                            >
-                                Projects <FolderKanban />
+                                Experience <UserRound />
                             </Link>
                         </nav>
                     </div>

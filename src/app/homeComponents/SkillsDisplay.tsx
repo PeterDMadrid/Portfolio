@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 
 export default function Skills() {
     const skills = [
-        "Leader",
-        "Innovator",
-        "Thinker",
-        "Creator",
-        "Developer",
-        "Planner",
-        "Builder",
-        "Solver",
-        "Learner",
+        "Analytical",
+        "Adaptable",
+        "Collaborative",
+        "Efficient",
+        "Curious",
+        "Strategic",
+        "Proactive",
+        "Resourceful",
+        "Driven",
     ];
 
     const [currentIndex, setIndex] = useState(0);
@@ -30,7 +30,7 @@ export default function Skills() {
         const handleResize = () => {
             const windowWidth = window.innerWidth;
             setIsSmallScreen(windowWidth < 640);
-            
+
             if (windowWidth < 640) {
                 setRadius(120);
             } else if (windowWidth < 1024) {
@@ -53,7 +53,7 @@ export default function Skills() {
                     if (offset > skills.length / 2) offset = skills.length - offset;
 
                     const baseAngle = isSmallScreen ? 270 : 180;
-                    
+
                     const angle =
                         ((index - currentIndex) * (360 / skills.length) + baseAngle) *
                         (Math.PI / 180);
