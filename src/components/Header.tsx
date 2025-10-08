@@ -24,8 +24,7 @@ export default function Header() {
                 <nav className="hidden md:block ">
                     <div className="flex gap-4 text-slate-400">
                         <Link href="/" className="font-light text-md cursor-pointer">Home</Link>
-                        <Link href="/about" className="font-light text-md cursor-pointer">About</Link>
-                        <Link href="/projects" className="font-light text-md cursor-pointer">Projects</Link>
+                        <Link href="/about" className="font-light text-md cursor-pointer">Experience</Link>
                     </div>
                 </nav>
                 <button className="md:hidden text-white"
