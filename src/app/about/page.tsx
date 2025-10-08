@@ -35,7 +35,7 @@ export default function About() {
                                 <div className="lg:col-span-5">
                                     <div className="relative w-full aspect-[3/4] max-h-96 border border-[#1e3a52] rounded-lg overflow-hidden">
                                         <Image
-                                            src="/Grad_Attire.jpg"
+                                            src="/Grad_Attire.JPG"
                                             alt='Graduation Picture'
                                             fill
                                             className="object-cover"
