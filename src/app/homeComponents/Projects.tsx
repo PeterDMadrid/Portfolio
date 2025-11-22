@@ -12,18 +12,25 @@ const projectData = [
     },
     {
         id: 2,
+        title: "Kraft And Serenade",
+        description: " Built a product showcase website using Next.js with modular components, centralized data management, and dynamic routing for a clean and scalable codebase.",
+        link: "https://kraft-and-serenade.vercel.app/",
+        image: "/landing.png"
+    },
+    {
+        id: 3,
         title: "Mathands",
         description: "A mobile application designed to teach students mathematics using sign language. Built with Flutter (frontend) and Django (backend), it features interactive lessons, quizzes, sign language recognition from hand images, and progress tracking to create an engaging and accessible learning experience.",
         link: "https://github.com/PeterDMadrid/Mathands-Frontend.git",
         image: "/MathandsSnippet.PNG",
     },
     {
-        id: 3,
+        id: 4,
         title: "Task Manager",
         description: "A web-based Task Manager built with Next.js that allows users to create, update, and track tasks efficiently. Features include user authentication, responsive design, and real-time task management, providing a smooth and intuitive experience for organizing daily activities.",
         link: "https://github.com/PeterDMadrid/Task-Manager-Application.git",
         image: "/TaskManager.png" // Add actual image path for this one
-    }
+    },
 ]
 
 export default function Projects() {
