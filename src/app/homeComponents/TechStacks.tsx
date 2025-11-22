@@ -37,7 +37,7 @@ const techData = [
 
 export default function TechStack() {
     return (
-        <div className="flex flex-col min-h-screen myColor2 relative z-10 pb-10 pt-8">
+        <div className="flex flex-col myColor2 relative z-10 pb-10 pt-8">
             <h1 className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold leading-[1.1] text-[#EEF1F5] text-center mb-4">
                 What I do
             </h1>
