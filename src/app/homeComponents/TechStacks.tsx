@@ -37,7 +37,7 @@ const techData = [
 
 export default function TechStack() {
     return (
-        <div className="flex flex-col min-h-screen myColor2 relative z-10 pb-10 pt-8">
+        <div className="flex flex-col myColor2 relative z-10 pb-10 pt-8">
             <h1 className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold leading-[1.1] text-[#EEF1F5] text-center mb-4">
                 What I do
             </h1>
@@ -51,12 +51,14 @@ export default function TechStack() {
                     <div key={tech.id} className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 
                     transition-all duration-300 hover:transform hover:-translate-y-3 
                     hover:shadow-2xl hover:border-indigo-500/30 relative overflow-hidden">
-                        <div className="w-15 h-15 md:group-hover:bg-transparent md:bg-gray-900 rounded-xl 
+                        <div className="w-15 h-15 bg-gray-900 md:group-hover:bg-transparent rounded-xl 
                         flex items-center justify-center mb-6 p-3 relative transition-all duration-300">
-                            {tech.mainLogo}
+                            <div className="relative z-10">
+                                {tech.mainLogo}
+                            </div>
 
                             {tech.additionalLogos.map((item, index) => (
-                                <div key={index} className={`text-white absolute flex ${item.position} w-15 h-15 p-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-x-8 md:translate-x-0 md:group-hover:translate-x-8 transition-all duration-200`}>
+                                <div key={index} className={`text-white absolute flex ${item.position} w-15 h-15 p-3 opacity-0 md:group-hover:opacity-100 translate-x-0 md:group-hover:translate-x-8 transition-all duration-200`}>
                                     {item.logo}
                                 </div>
                             ))}
